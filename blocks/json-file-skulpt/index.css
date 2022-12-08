@@ -1,0 +1,38 @@
+/* pre {
+  background: papayawhip;
+} */
+
+/* A simple table should have a border and some padding in the cells th, td */
+
+table.simple-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.simple-table th,
+table.simple-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* A Nested Table should be more pronounced - The th cells should be a
+   light neutral blue color and the td cells should just have a border */
+table.nested-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.nested-table th,
+table.nested-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+table.nested-table th {
+  background: #f0f0f0;
+}
+
+/* Formatting null */
+span.null {
+  color: #999;
+}
