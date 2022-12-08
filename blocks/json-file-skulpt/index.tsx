@@ -32,9 +32,6 @@ export default function (props: FileBlockProps) {
           File: {context.path} {language}
         </Box>
         <Box p={4}>
-          <h1>View me!</h1>
-          <p>Metadata example: this button has been clicked:</p>
-          {/* <pre className="mt-3 p-3">{jsonString}</pre> */}
           {formatShapedData(dataShape)}
         </Box>
       </Box>

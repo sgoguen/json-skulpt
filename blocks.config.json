@@ -1,11 +1,11 @@
 [
   {
     "type": "file",
-    "id": "file-block",
+    "id": "json-skulpt-file-block",
     "title": "JSON Skulpt",
     "description": "A file for visualizing JSON",
     "entry": "blocks/json-file-skulpt/index.tsx",
     "matches": ["*.json"],
-    "example_path": "https://github.com/facebook/react/blob/main/packages/react-dom/index.js"
+    "example_path": "https://github.com/sgoguen/json-skulpt/blob/main/docs/example-file.json"
   }
 ]
