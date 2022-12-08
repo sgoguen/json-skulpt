@@ -1,6 +1,6 @@
 {
-  "name": "custom-block-template",
-  "version": "0.0.0",
+  "name": "json-skulpt-file-block",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "start": "blocks start",
