@@ -35,39 +35,38 @@ export type DataShapeType =
 
 type ShapedSimple = {
     shapeType: "simple";
-    value: SimpleType;
+    data: SimpleType;
 };
 
 type ShapedSimpleArray = {
     shapeType: "simpleArray";
-    array: SimpleArray;
+    data: SimpleArray;
 };
 
 type ShapedSimpleObject = {
     shapeType: "simpleObject";
-    obj: SimpleObject;
+    data: SimpleObject;
 };
 
 type ShapedSimpleTable = {
     shapeType: "simpleTable";
     columns: string[];
-    table: SimpleTable;
+    data: SimpleTable;
 };
 
 type ShapedNestedObject = {
     shapeType: "nestedObject";
-    obj: NestedObject;
+    data: NestedObject;
 };
 
 type ShapedNestedTable = {
     shapeType: "nestedTable";
-    table: NestedTable;
-    columns: string[];
+    data: NestedTable;
 };
 
 type UnknownShape = {
     shapeType: "unknown";
-    value: unknown;
+    data: unknown;
 };
 
 export type ShapedData =
@@ -85,29 +84,28 @@ export function shapeData(data: any): ShapedData {
     typeof data === "boolean" ||
     data === null
   ) {
-    return { shapeType: "simple", value: data };
+    return { shapeType: "simple", data };
   } else if (Array.isArray(data)) {
     if (data.length === 0) {
-      return { shapeType: "simpleArray", array: data };
+      return { shapeType: "simpleArray", data };
     } else {
       if (isSimpleArray(data)) {
-        return { shapeType: "simpleArray", array: data };
+        return { shapeType: "simpleArray", data };
       } else if (isSimpleTable(data)) {
         const columns = getTableColumns(data);
-        return { shapeType: "simpleTable", table: data, columns };
+        return { shapeType: "simpleTable", data, columns };
       } else {
-        const columns = getTableColumns(data);
-        return { shapeType: "nestedTable", table: data, columns };
+        return { shapeType: "nestedTable", data };
       }
     }
   } else if (typeof data === "object") {
     if (isSimpleObject(data)) {
-      return { shapeType: "simpleObject", obj: data };
+      return { shapeType: "simpleObject", data };
     } else {
-      return { shapeType: "nestedObject", obj: data };
+      return { shapeType: "nestedObject", data };
     }
   }
-  return { shapeType: "unknown", value: data };
+  return { shapeType: "unknown", data };
 }
 
 export function isSimpleType(data: any): data is SimpleType {

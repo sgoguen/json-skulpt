@@ -7,5 +7,14 @@
     "entry": "blocks/json-file-skulpt/index.tsx",
     "matches": ["*.json"],
     "example_path": "https://github.com/sgoguen/json-skulpt/blob/main/docs/example-file.json"
-  }
+  },
+  {
+    "type": "file",
+    "id": "ts-viewer-block",
+    "title": "TypeScript Viewer",
+    "description": "An Experimental TypeScript Viewer",
+    "entry": "blocks/ts-file-viewer/index.tsx",
+    "matches": ["*.ts", "*.tsx"],
+    "example_path": "https://github.com/sgoguen/json-skulpt/blob/main/docs/example-file.json"
+  }  
 ]
